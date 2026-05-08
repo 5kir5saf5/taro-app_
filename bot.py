@@ -33,13 +33,9 @@ async def handle(msg: types.Message):
 
     text_cards = "\n".join([c["name"] for c in cards])
 
-    await msg.answer("🔮 Расклад готов:\n" + text_cards)
+    await msg.answer("🔮 Расклад готов:\n\n" + text_cards)
 
-    # отправка картинок
-    for c in cards:
-        path = f"cards/{c['image']}"
-        if os.path.exists(path):
-            await msg.answer_photo(types.FSInputFile(path))
+    # ❌ УБРАЛИ ФОТО
 
     # AI трактовка
     result = await asyncio.to_thread(interpret, msg.text, text_cards)
@@ -47,7 +43,6 @@ async def handle(msg: types.Message):
     await msg.answer("🧠 Трактовка:\n\n" + result)
 
     await add_use(user_id)
-
 
 async def main():
     await init()
