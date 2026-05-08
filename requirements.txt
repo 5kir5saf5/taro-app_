@@ -1,0 +1,6 @@
+aiogram
+aiohttp
+aiosqlite
+pillow
+requests
+google-generativeai
