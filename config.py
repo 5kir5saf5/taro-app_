@@ -1,8 +1,7 @@
 import os
 
-BOT_TOKEN = os.getenv("8409716817:AAHmmfy7anmiTdbPLzv8JI3m83bru0x6UJE") 
-
-GEMINI_API_KEY = os.getenv"AIzaSyB5TodxsvReWkSC-k5L8It6Wc-Lkss2brA"
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 
 
 ADMIN_ID = 7690316162
