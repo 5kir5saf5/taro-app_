@@ -3,9 +3,10 @@ from config import GEMINI_API_KEY
 
 genai.configure(api_key=GEMINI_API_KEY)
 
-model = genai.GenerativeModel("gemini-1.5-flash")
+model = genai.GenerativeModel("gemini-1.5-flash-latest")
 
 def interpret(question, cards):
+
     prompt = f"""
 Ты таролог. Сделай расклад.
 
@@ -21,4 +22,5 @@ def interpret(question, cards):
 """
 
     response = model.generate_content(prompt)
-    return response.text
+
+    return response.text if response.text else "AI не дал ответ"
